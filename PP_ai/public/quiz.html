@@ -1,0 +1,39 @@
+<!-- public/quiz.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>PP - クイズ</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>🧠 今日のクイズ</h1>
+      <a href="index.html" class="btn back-home">🏠 ホームに戻る</a>
+    </div>
+
+    <p class="subtext">正しい答えを選んでみよう！</p>
+
+    <!-- ✅ 言語切り替え -->
+    <div style="text-align: center; margin: 16px 0;">
+      <select id="languageSelect" onchange="changeLanguage()" style="font-size: 16px; padding: 6px 12px; border-radius: 8px;">
+        <option value="html">HTML</option>
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+      </select>
+    </div>
+
+    <div id="quiz-box" class="mission-box">
+      <h2 id="question">🌀 問題を読み込み中...</h2>
+      <div id="choices"></div>
+    </div>
+
+    <p id="feedback" style="font-weight: bold;"></p>
+    <button onclick="nextQuestion()" class="btn">➡️ 次の問題へ</button>
+  </div>
+
+  <!-- ✅ クイズロジック -->
+  <script src="js/quiz.js" defer></script>
+</body>
+</html>

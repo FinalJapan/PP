@@ -1,0 +1,126 @@
+/* style.css - Udemy風 × 中央寄せ × Orbitフォント */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+body {
+  font-family: 'Orbit', sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.container {
+  max-width: 720px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #2d2f31;
+  margin-bottom: 12px;
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: #60626d;
+  margin-bottom: 48px;
+}
+
+.mission-box {
+  text-align: center;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+}
+
+.mission-box h2 {
+  font-size: 1.3rem;
+  margin: 0 0 12px;
+  color: #2d2f31;
+}
+
+#todayMission {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+button, .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #5624d0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin: 10px 5px;
+}
+
+button:hover, .btn:hover {
+  background-color: #401b9c;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn.back-home {
+    background-color: #999;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+  
+  .page-header h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .btn.back-home {
+    background-color: #999;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    color: white;
+    transition: background-color 0.2s;
+  }
+  
+  .btn.back-home:hover {
+    background-color: #777;
+  }
+  
+  .languageSelect {
+    margin-top: 0;
+    margin-bottom: 16px; /* ← 下にちょっと余白 */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  

@@ -1,0 +1,47 @@
+<!-- log.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>学習ログ - CodeTrack</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>📘 学習ログ</h1>
+      <a href="index.html" class="btn back-home">🏠 ホームに戻る</a>
+    </div>
+
+    <p class="subtext">これまでに答えたクイズの記録です</p>
+
+    <!-- ✅ 学習履歴表示 -->
+    <div class="mission-box" id="log-list">
+      読み込み中...
+    </div>
+  </div>
+
+  <script>
+    const logList = document.getElementById("log-list");
+    const logs = JSON.parse(localStorage.getItem("writtenResults") || "[]");
+
+    if (logs.length === 0) {
+      logList.textContent = "まだ学習記録がありません。";
+    } else {
+      logList.innerHTML = `
+        <ul style="padding-left: 1em; text-align: left; line-height: 1.8;">
+          ${logs.map(log => `
+            <li>
+              <strong>${log.date}</strong><br>
+              <span style="color: #555;">「${log.question}」</span><br>
+              <span style="color: ${log.result === '正解' ? 'green' : 'red'};">
+                結果：${log.result}
+              </span>（${log.language.toUpperCase()}）
+            </li>
+          `).join("")}
+        </ul>
+      `;
+    }
+  </script>
+</body>
+</html>

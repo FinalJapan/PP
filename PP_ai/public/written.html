@@ -1,0 +1,49 @@
+<!-- written.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>記述式クイズ - CodeTrack</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="questions/html-gpt-questions.js" defer></script>
+  <script src="questions/python-gpt-questions.js" defer></script>
+  <script src="questions/js-gpt-questions.js" defer></script>
+  <script src="js/written.js" defer></script>
+</head>
+<body>
+  <!-- ✅ ヘッダー -->
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="font-size: 32px;">✏️</span>
+      <h1 style="margin: 0;">記述式クイズ</h1>
+    </div>
+    <a href="index.html" class="btn back-home">🏠 ホームに戻る</a>
+  </div>
+
+  <!-- ✅ 言語選択 -->
+  <div style="margin-top: 16px; text-align: center;">
+    <select id="languageSelect" onchange="changeLanguage()" style="font-size: 16px; padding: 6px 12px; border-radius: 8px;">
+      <option value="html">HTML</option>
+      <option value="javascript">JavaScript</option>
+      <option value="python">Python</option>
+    </select>
+  </div>
+
+  <!-- ✅ クイズ出題エリア -->
+  <div class="container">
+    <div class="mission-box" id="quiz-box">
+      <h2 id="question">読み込み中...</h2>
+      <p><strong>ヒント：</strong><span id="hint">読み込み中...</span></p>
+      <textarea id="answer" rows="6" style="width:100%; font-family: monospace;"></textarea>
+      <br><br>
+      <button onclick="checkAnswer()">✅ 答える</button>
+    </div>
+
+    <!-- ✅ 判定結果 -->
+    <p id="feedback" style="font-weight: bold;"></p>
+
+    <!-- ✅ 次の問題ボタン -->
+    <button onclick="nextQuestion()" class="btn" style="margin-top: 16px;">➡️ 次の問題へ</button>
+  </div>
+</body>
+</html>

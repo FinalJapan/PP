@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PP - ホーム</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome PP！</h1>
+    <p class="subtext">"To soar high, you need to take a deep step forward."</p>
+
+    <!-- ✅ 今日のミッション -->
+    <div class="mission-box">
+      <h2>🧪 今日のミッション</h2>
+      <p id="todayMission">読み込み中...</p>
+      <button onclick="completeMission()">✅ ミッションクリア</button>
+    </div>
+
+    <!-- ✅ 学習ボタン -->
+    <div class="buttons">
+      <a href="quiz.html" class="btn">🧠 クイズで学ぶ</a>
+      <a href="written.html" class="btn">🖊️ 記述式クイズ</a>
+      <a href="log.html" class="btn">📊 学習ログを見る</a>
+    </div>
+  </div>
+
+  <script>
+    // ミッション読み込み処理（簡易版）
+    const missions = [
+      "HTMLで自己紹介ページを作ってみよう！",
+      "CSSで背景色を変えてみよう！",
+      "JavaScriptでアラートを表示してみよう！",
+      "Pythonでprint()を使ってみよう！",
+      "JavaでHello Worldを書いてみよう！"
+    ];
+    const today = new Date().getDate(); // 日付で出題を変える
+    document.getElementById("todayMission").textContent = missions[today % missions.length];
+
+    function completeMission() {
+      alert("お疲れ様！ミッションクリアを記録したよ！");
+      // ローカルストレージに記録（今は簡易でOK）
+      const logs = JSON.parse(localStorage.getItem("missions") || "[]");
+      logs.push({
+        date: new Date().toLocaleDateString(),
+        mission: missions[today % missions.length]
+      });
+      localStorage.setItem("missions", JSON.stringify(logs));
+    }
+  </script>
+</body>
+</html>
